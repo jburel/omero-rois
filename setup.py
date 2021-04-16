@@ -130,4 +130,7 @@ setup(
     python_requires=">=3",
     cmdclass={"test": PyTest},
     tests_require=["pytest"],
+    extras_require={
+        "imagej": ["read-roi"],
+    },
 )

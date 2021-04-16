@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2019 University of Dundee & Open Microscopy Environment.
+# Copyright (C) 2019-2021 University of Dundee & Open Microscopy Environment.
 # All rights reserved.
 #
 # This program is free software; you can redistribute it and/or modify
@@ -24,9 +24,16 @@ from .library import (
     masks_from_label_image,
 )
 
+from .imagej import (
+    read_roi,
+    convert_data,
+)
+
 __all__ = (
     "NoMaskFound",
     "InvalidBinaryImage",
     "mask_from_binary_image",
     "masks_from_label_image",
+    "read_roi",
+    "convert_data",
 )
