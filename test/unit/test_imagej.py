@@ -30,22 +30,38 @@ from omero_rois import (
 
 @pytest.fixture
 def shape_data():
-    values = OrderedDict([
-             ('1', {'type': 'point', 'x': [0], 'y': [1], 'n': 1, 
-             'name': '1', 'counters': [0],
-             'slices': [153],
-             'position': {'channel': 1, 'slice': 2, 'frame': 3}
-             }),
-             ('2', {'type': 'point', 'x': [0], 'y': [1], 'n': 1, 
-             'name': '2',
-             'position': 0
-             })
-             ])
+    values = OrderedDict(
+        [
+            (
+                "1",
+                {
+                    "type": "point",
+                    "x": [0],
+                    "y": [1],
+                    "n": 1,
+                    "name": "1",
+                    "counters": [0],
+                    "slices": [153],
+                    "position": {"channel": 1, "slice": 2, "frame": 3},
+                },
+            ),
+            (
+                "2",
+                {
+                    "type": "point",
+                    "x": [0],
+                    "y": [1],
+                    "n": 1,
+                    "name": "2",
+                    "position": 0,
+                },
+            ),
+        ]
+    )
     return values
 
 
 class TestImageJUtils(object):
-
     def test_roi_from_shape_data(self, shape_data):
         assert shape_data is not None
         shapes = convert_data(shape_data)
